@@ -9,5 +9,4 @@ public class SpeachApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpeachApplication.class, args);
 	}
-
 }
