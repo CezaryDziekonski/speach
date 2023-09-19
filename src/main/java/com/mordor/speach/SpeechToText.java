@@ -25,7 +25,7 @@ public class SpeechToText {
 
     @PostConstruct
     private void init() throws ExecutionException, InterruptedException {
-        speech2Text();
+//        speech2Text();
     }
 
     private void speech2Text() throws ExecutionException, InterruptedException {

@@ -1,0 +1,49 @@
+openapi: 3.0.1
+info:
+  title: My API
+  description: This is a sample Spring Boot RESTful service using springdoc-openapi
+    and OpenAPI 3.
+servers:
+  - url: http://localhost:8080
+    description: Generated server url
+paths:
+  /api/question/add:
+    post:
+      tags:
+        - question-controller
+      operationId: addQuestion
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QuestionDoc'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/QuestionDoc'
+  /api/question/{id}:
+    get:
+      tags:
+        - question-controller
+      operationId: getQuestion
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/QuestionDoc'
+components:
+  schemas:
+    QuestionDoc:
+      type: object
