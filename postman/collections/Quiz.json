@@ -1,0 +1,22 @@
+{
+	"info": {
+		"_postman_id": "02251e5b-1e13-417a-ba2a-77a15cd69ce5",
+		"name": "Quiz",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "7769157-02251e5b-1e13-417a-ba2a-77a15cd69ce5"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"id": "5f85fceb-d1b9-4317-84a3-16406e1f4084",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
