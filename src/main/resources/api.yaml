@@ -1,13 +1,13 @@
 openapi: 3.0.1
 info:
-  title: My API
-  description: This is a sample Spring Boot RESTful service using springdoc-openapi
-    and OpenAPI 3.
+  title: Quiz API
+  description: Api for Quiz application
+  version: 1.0.0
 servers:
   - url: http://localhost:8080
     description: Generated server url
 paths:
-  /api/question/add:
+  /api/questions/add:
     post:
       tags:
         - question-controller
@@ -25,7 +25,21 @@ paths:
             '*/*':
               schema:
                 $ref: '#/components/schemas/QuestionDoc'
-  /api/question/{id}:
+  /api/questions:
+    get:
+      tags:
+        - question-controller
+      operationId: getQuestions
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/QuestionDoc'
+  /api/questions/{id}:
     get:
       tags:
         - question-controller
@@ -45,5 +59,19 @@ paths:
                 $ref: '#/components/schemas/QuestionDoc'
 components:
   schemas:
+    AnswerDoc:
+      type: object
+      properties:
+        content:
+          type: string
     QuestionDoc:
       type: object
+      properties:
+        id:
+          type: string
+        content:
+          type: string
+        answers:
+          type: array
+          items:
+            $ref: '#/components/schemas/AnswerDoc'

@@ -13,6 +13,9 @@ public class OpenApiConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .components(new Components())
-                .info(new Info().title("My API").description("This is a sample Spring Boot RESTful service using springdoc-openapi and OpenAPI 3."));
+                .info(new Info()
+                        .title("Quiz API")
+                        .version("1.0.0")
+                        .description("Api for Quiz application"));
     }
 }

@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/api/question")
+@RequestMapping("/api/questions")
 @RequiredArgsConstructor
 public class QuestionController {
     private final QuestionManager questionManager;
@@ -25,5 +27,11 @@ public class QuestionController {
     public QuestionDoc getQuestion(@PathVariable String id) {
         return questionManager.getQuestion(id);
     }
+
+    @GetMapping()
+    public List<QuestionDoc> getQuestions() {
+        return questionManager.getQuestions();
+    }
+
 
 }
